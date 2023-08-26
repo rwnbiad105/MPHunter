@@ -1,0 +1,7 @@
+#!/bin/bash
+# find ./ -name "setup.py" | grep import
+# grep "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" -r ./ # | find -name "setup.py" > a.txt
+
+find ./ -name "setup.py" -exec grep -in '^$' -H {} \; > file_with_empty_lines.txt  
+
+find ./ -name "setup.py" -exec grep -in '                                  ' -H {} \; > file_with_space_lines.txt
